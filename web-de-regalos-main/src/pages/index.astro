@@ -1,0 +1,105 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+---
+
+<Layout title="Regaloteca | Encuentra el Regalo Perfecto">
+	<Hero
+		title="Bienvenido a Regaloteca"
+		subtitle="Tu fuente de inspiración para encontrar los mejores regalos de Amazon."
+	/>
+
+	<section class="container mb-xl">
+		<h2 class="text-center mb-md">Categorías Destacadas</h2>
+		<div class="categories-grid">
+			<a
+				href="/regalos-originales-para-madres"
+				class="category-card mother"
+			>
+				<div class="content">
+					<h3>Para Madres</h3>
+					<p>Sorprende a mamá con lo mejor</p>
+					<span class="btn-link">Ver Regalos &rarr;</span>
+				</div>
+			</a>
+			<!-- Placeholder for other categories -->
+			<div class="category-card placeholder">
+				<div class="content">
+					<h3>Para Padres</h3>
+					<p>Próximamente</p>
+				</div>
+			</div>
+			<div class="category-card placeholder">
+				<div class="content">
+					<h3>Tecnología</h3>
+					<p>Próximamente</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="container text-center mb-xl">
+		<h2>¿Buscas algo especial?</h2>
+		<p class="mb-md">
+			Explora nuestra colección curada de regalos originales para madres.
+		</p>
+		<a href="/regalos-originales-para-madres" class="btn btn-primary"
+			>Ver Colección para Madres</a
+		>
+	</section>
+</Layout>
+
+<style>
+	.categories-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: var(--spacing-md);
+	}
+
+	.category-card {
+		background: white;
+		border-radius: var(--radius-md);
+		padding: var(--spacing-lg);
+		text-align: center;
+		box-shadow: var(--shadow-sm);
+		transition: all 0.3s ease;
+		border: 1px solid transparent;
+		display: block;
+		text-decoration: none;
+		color: inherit;
+	}
+
+	.category-card:hover {
+		transform: translateY(-5px);
+		box-shadow: var(--shadow-md);
+		border-color: var(--color-primary-light);
+	}
+
+	.category-card.mother {
+		background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+		border-left: 5px solid var(--color-primary);
+	}
+
+	.category-card h3 {
+		color: var(--color-secondary);
+		margin-bottom: var(--spacing-xs);
+		font-size: 1.5rem;
+	}
+
+	.btn-link {
+		display: inline-block;
+		margin-top: var(--spacing-sm);
+		color: var(--color-primary);
+		font-weight: 600;
+	}
+
+	.placeholder {
+		opacity: 0.6;
+		cursor: default;
+	}
+
+	.placeholder:hover {
+		transform: none;
+		box-shadow: var(--shadow-sm);
+	}
+</style>
